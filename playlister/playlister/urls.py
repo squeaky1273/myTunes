@@ -18,4 +18,10 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Accounts
+    #path('accounts/', include('django.contrib.auth.urls')),
+    #path('accounts/', include('accounts.urls')),
 ]
+    # Playlist App
+    #path('', include('playlist.urls')),
