@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'wiki-list-page' %}"><i class="fas fa-fw fa-book"></i> Playlister</a>
+      <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class="fas fa-fw fa-book"></i> Playlister</a>
       <form class="form-inline ml-auto">
         {% if user.is_authenticated %}
         <div class="text-white">Hello, <strong>{{user.username}}</strong>!</div>

@@ -1,10 +1,9 @@
 from django.urls import path
+from playlist.views import PlaylistListView, PlaylistCreateView, PlaylistDetailView
 
-from . import views
 
-app_name = 'playlist'
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    path('<int:pk>/results/', views.ResultsView.as_view(), name='results')
+    path('', PlaylistListView.as_view(), name='playlist-list-page'),
+    path('new_playlist/', PlaylistCreateView.as_view(), name='playlist-new-page'),
+    path('<str:slug>/', PlaylistDetailView.as_view(), name='playlist-details-page')
 ]
