@@ -128,8 +128,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-# wiki app settings
-PLAYLISTER_TITLE_MAX_LENGTH = 600
+# playlist app settings
+PLAYLISTER_NAME_MAX_LENGTH = 600
 
 
 DEFAULT_LOGOUT_URL = '/'

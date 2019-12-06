@@ -4,7 +4,7 @@
       <p class="card-text text-dark">
         {{ playlist.description|truncatewords_html:30 }}
         <hr>
-        <div class="text-right"><a href="{% url 'playlist-details-page' page.slug %}" title="Read More">Read More</a></div>
+        <div class="text-right"><a href="{% url 'playlist-details-page' playlist.slug %}" title="Read More">Read More</a></div>
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated {{ playlist.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ playlist.author.username }}</b></small>
