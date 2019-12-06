@@ -8,6 +8,8 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Playlister</title>
   </head>
+  {% block head %}
+  {% endblock head %}
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class="fas fa-fw fa-book"></i> Playlister</a>

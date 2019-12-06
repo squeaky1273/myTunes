@@ -1,6 +1,11 @@
-
+{% extends "base.html" %}
 {% load static %}
 <html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
+        {% endblock head %}
+    </head>
 <body>
 {% block content %}
   <h3>Playlists {% if playlists %}<small class="text-muted">({{ playlists|length }} Playlist{{ playlists|length|pluralize:"s" }})</small>{% endif %}</h3>
