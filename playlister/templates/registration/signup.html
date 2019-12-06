@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
+        {% endblock head %}
+    </head>
 {% block content %}
   <h3>Sign Up <small class="text-muted">to create your own playlists!</small></h3>
   <hr>

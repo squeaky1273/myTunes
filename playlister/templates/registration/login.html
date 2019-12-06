@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
+        {% endblock head %}
+    </head>
 
 {% block content %}
     <h3>Log In <small class="text-muted">to create your own wiki pages!</small></h3>
