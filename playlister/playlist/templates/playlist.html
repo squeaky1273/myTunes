@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% load static %}
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
+        {% endblock head %}
+    </head>
+    
 {% block content %}
   <div class="row">
     <div class="col m-4">
