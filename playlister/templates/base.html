@@ -6,13 +6,13 @@
     <script src="https://kit.fontawesome.com/e7c15fdb77.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Mytunes</title>
+    <title>myTunes</title>
   </head>
   {% block head %}
   {% endblock head %}
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class="fas fa-fw fa-book"></i> Mytunes</a>
+      <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class="fas fa-fw fa-book"></i> myTunes</a>
       <form class="form-inline ml-auto">
         {% if user.is_authenticated %}
         <div class="text-white">Hello, <strong>{{user.username}}</strong>!</div>
@@ -44,4 +44,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <footer class="bg-dark p-5 text-white">
+      <center>&copy; myTunes 2019</center>
+    </footer>
   </body>
