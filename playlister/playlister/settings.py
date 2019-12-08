@@ -148,3 +148,6 @@ try:
     from playlister.local_settings import *
 except ImportError:
     pass
+
+ALLOWED_HOSTS = ['localhost', 'playlister-p-r.herokuapp.com']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
