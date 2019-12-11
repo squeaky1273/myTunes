@@ -6,10 +6,10 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
+
 class Playlist(models.Model):
     playlist_name = models.CharField(max_length=settings.PLAYLISTER_NAME_MAX_LENGTH, unique=True,
                              help_text="Title of your page.")
-    video_link = models.CharField(max_length=200, blank=True, default='')
     author = models.ForeignKey(User, on_delete=models.PROTECT,
                             help_text="The user that posted this playlist.")
     slug = models.CharField(max_length=settings.PLAYLISTER_NAME_MAX_LENGTH, blank=True, editable=False,
@@ -37,5 +37,9 @@ class Playlist(models.Model):
         # Call save on the superclass.
         return super(Playlist, self).save(*args, **kwargs)
 
-class Videos(models.Model):
-    playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE)
+class Video(models.Model):
+    video = models.CharField(max_length=200)
+    playlist_id = models.ForeignKey(Playlist, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.video
