@@ -1,0 +1,15 @@
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255)); /* Standard syntax (must be last) */
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    }
