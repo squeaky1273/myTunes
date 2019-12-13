@@ -149,5 +149,5 @@ try:
 except ImportError:
     pass
 
-ALLOWED_HOSTS = ['localhost', 'playlister-p-r.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'playlister-p-r.herokuapp.com']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
