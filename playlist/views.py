@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
@@ -6,8 +6,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import CreateView
 
-from playlist.models import Playlist
-from playlist.forms import PlaylistForm
+from playlist.models import Playlist, Video
+from playlist.forms import PlaylistForm, VideoForm
 
 
 class PlaylistListView(ListView):
@@ -28,9 +28,19 @@ class PlaylistDetailView(DetailView):
     def get(self, request, slug):
         """ Returns a specific playlist by slug. """
         playlist = self.get_queryset().get(slug__iexact=slug)
+        video_form = VideoForm()
         return render(request, 'playlist.html', {
-          'playlist': playlist
+          'playlist': playlist,
+          'video_form': video_form
         })
+
+    def post(self, request, slug):
+        form = VideoForm(request.POST)
+        if form.is_valid():
+          video_choice = form.save(commit=False)
+          video_choice.playlist_id = Playlist.objects.get(slug__iexact=slug)
+          video_choice.save()
+          return redirect('playlist-details-page', slug=slug)
 
 class SignUpView(CreateView):
   form_class = UserCreationForm
