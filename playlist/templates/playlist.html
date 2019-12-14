@@ -24,7 +24,7 @@
       <form action='' method='POST'> 
         {% csrf_token %}
         {{ video_form.as_p|linebreaksbr }}
-        <p>For links to youtube videos, include in the form of "https://www.youtube.com/embed/".</p>
+        <p>For links to youtube videos, include in the form of https://www.youtube.com/embed/.</p>
         <input type="submit">
       </form>
       <a href="{% url 'playlist-list-page' %}">Back to List</a>
