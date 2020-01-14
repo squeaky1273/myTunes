@@ -9,25 +9,33 @@
     </head>-->
     
 {% block content %}
-  <div class="row">
-    <div class="col m-4">
+<div class="card mb-3">
+  <div class="card-body border-dark">
+    <div class="card-body border-dark">
       <h3>{{ playlist.playlist_name }} <small class="text-muted">Last updated {{ playlist.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ playlist.author.username }}</b></small></h3>
       <hr>
-      <p>Created by: {{ playlist.author|linebreaksbr }}</p>
-      <p>{{ playlist.description|linebreaksbr }}</p>
-      {% for video in playlist.video_set.all %}
-      <iframe width="420" height="315"
-          src="{{ video.video }}">
-        </iframe>
-      {% endfor %}
+      <h5>Created by: {{ playlist.author|linebreaksbr }}</h5>
+      <h5>{{ playlist.description|linebreaksbr }}</h5>
+      <h3 class="card-header">
+        <div class="card mb-3">
+           <div class="card-body border-dark">
+            {% if user.is_authenticated %}
+            {% for video in playlist.video_set.all %}
+              <iframe width="420" height="315"
+                src="{{ video.video }}">
+              </iframe>
+            {% endfor %}
       <hr>
       <form action='' method='POST'> 
         {% csrf_token %}
         {{ video_form.as_p|linebreaksbr }}
         <p>For links to youtube videos, include in the form of https://www.youtube.com/embed/.</p>
         <input type="submit">
+        {% else %}
+        <h5><i>You must sign up or log in to add a video to the playlist.</i></h5>
+        {% endif %}
       </form>
-      <a href="{% url 'playlist-list-page' %}">Back to List</a>
+      <a href="{% url 'playlist-list-page' %}"><h6>Back to List</h6></a>
     </div>
   </div>
 {% endblock %}
