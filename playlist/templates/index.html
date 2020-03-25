@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-<!--CSS code (Need to work on later)-->
 {% load static %}
 <html>
  <head>
@@ -9,7 +8,7 @@
     </head>
 <body>
 {% block content %}
-  <h3>myTunes {% if playlists %}<small class="text-muted">({{ playlists|length }} Playlists)</small>{% endif %}</h3>
+  <center><h3><img src="{% static 'playlist/logo.png' %}" width=100px height=75px></i> myTunes {% if playlists %}<small class="text-muted">({{ playlists|length }} Playlists)</small>{% endif %}</h3></center>
   <hr>
   {% if playlists %}
     <div class="card-columns">

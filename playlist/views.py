@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, HttpResponseRedirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from playlist.models import Playlist, Video
 from playlist.forms import PlaylistForm, VideoForm
@@ -63,3 +63,21 @@ class PlaylistCreateView(CreateView):
         log = form.save()
         return HttpResponseRedirect(reverse_lazy('playlist-details-page', args=[log.slug]))
       return render(request, 'new_playlist.html', {'form': form})
+
+class PlaylistUpdateView(UpdateView):
+      model = Playlist
+      template_name = 'update.html'
+      form_class = PlaylistForm
+
+      def get_success_url(self):
+        return reverse('playlist-details-page', kwargs={
+            'slug': self.object.slug,
+          })
+
+class PlaylistDeleteView(DeleteView):
+      model = Playlist
+      success_url = '/'
+
+      def get(self, *args, **kwargs):
+        print('get method update')
+        return self.delete(*args, **kwargs)

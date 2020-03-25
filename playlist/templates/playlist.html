@@ -3,10 +3,10 @@
 {% load static %}
 <html>
  <head>
-        {% block head %}
-        <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
-        {% endblock head %}
-    </head>
+   {% block head %}
+      <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
+    {% endblock head %}
+  </head>
     
 {% block content %}
 <div class="card mb-3">
@@ -20,22 +20,31 @@
         <div class="card mb-3">
            <div class="card-body border-dark">
             {% if user.is_authenticated %}
-            {% for video in playlist.video_set.all %}
-              <iframe width="420" height="315"
-                src="{{ video.video }}">
-              </iframe>
-            {% endfor %}
-      <hr>
-      <form action='' method='POST'> 
-        {% csrf_token %}
-        {{ video_form.as_p|linebreaksbr }}
-        <p>For links to youtube videos, include in the form of https://www.youtube.com/embed/.</p>
-        <input type="submit">
-        {% else %}
-        <h5><i>You must sign up or log in to add a video to the playlist.</i></h5>
-        {% endif %}
-      </form>
-      <a href="{% url 'playlist-list-page' %}"><h6>Back to List</h6></a>
-    </div>
-  </div>
-{% endblock %}
+              {% for video in playlist.video_set.all %}
+                <iframe width="420" height="315"
+                  src="{{ video.video }}">
+                </iframe>
+              {% endfor %}
+          <hr>
+          <form action='' method='POST'> 
+            {% csrf_token %}
+            <h5>{{ video_form.as_p|linebreaksbr }}</h5>
+            <h5>For links to youtube videos, include the link in the form of <i>https://www.youtube.com/embed/</i></h5>
+            <h5><input type="submit"></h5>
+            {% else %}
+            <h5><i>You must sign up or log in to add a video to the playlist.</i></h5>
+            {% endif %}
+          </form>
+          &nbsp;
+          <div class="rows">
+            <a href="{% url 'playlist-list-page' %}"><h6>Back to List</h6></a>
+            {% if user.is_authenticated %}
+              <!-- {% if playlist.author %} -->
+                <a href="{% url 'playlist-update-page' playlist.slug %}"class="btn btn-warning"><h6>Edit Playlist</h6></a>
+                <a href="{% url 'playlist-delete' playlist.slug %}" class="btn btn-danger">Delete Playlist</a>
+              <!-- {% endif %} -->
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endblock %}

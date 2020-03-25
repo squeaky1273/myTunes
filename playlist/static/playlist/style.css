@@ -9,7 +9,7 @@
 
 body {
 	background: linear-gradient(-45deg, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255));
-	background-size: 400% 400%;
+	background-size: 8000% 400%;
 	animation: gradient 15s ease infinite;
 }
 
@@ -26,9 +26,10 @@ body {
 }
 
 footer {
-    position: fixed;
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
-    }
+	}
+	
