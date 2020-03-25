@@ -8,27 +8,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>myTunes</title>
   </head>
-  <!--{% block head %}
-  {% endblock head %}-->
-  <style>
-    body {
-      height: 100%;
-      margin: 0;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-image: linear-gradient(to bottom right, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255)); /* Standard syntax (must be last) */
-  }
-  footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      }
-  </style>
+  {% block head %}
+  {% endblock head %}
+  {% load static %}
+
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class="fas fa-fw fa-book"></i> myTunes</a>
+      <a class="navbar-brand" href="{% url 'playlist-list-page' %}"><i class=""><img src="{% static 'playlist/logo.png' %}" width=65px height=45px></i> myTunes</a>
       <form class="form-inline ml-auto">
         {% if user.is_authenticated %}
         <div class="text-white">Hello, <strong>{{user.username}}</strong>!</div>
@@ -62,6 +48,6 @@
     </script>
     
     <footer class="bg-dark p-5 text-white">
-      <center>&copy; myTunes 2019</center>
+      <center>&copy; myTunes 2020</center>
     </footer>
   </body>
