@@ -1,12 +1,4 @@
 {% extends 'base.html' %}
-<!--CSS code (Need to work on later)-->
-{% load static %}
-<html>
- <head>
-   {% block head %}
-      <link rel="stylesheet" type="text/css" href="{% static 'playlist/style.css' %}">
-    {% endblock head %}
-  </head>
     
 {% block content %}
 <div class="card mb-3">
@@ -19,7 +11,7 @@
       <h3 class="card-header">
         <div class="card mb-3">
            <div class="card-body border-dark">
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %} -->
               {% for video in playlist.video_set.all %}
                 <iframe width="420" height="315"
                   src="{{ video.video }}">
@@ -31,9 +23,9 @@
             <h5>{{ video_form.as_p|linebreaksbr }}</h5>
             <h5>For links to youtube videos, include the link in the form of <i>https://www.youtube.com/embed/</i></h5>
             <h5><input type="submit"></h5>
-            {% else %}
+            <!-- {% else %}
             <h5><i>You must sign up or log in to add a video to the playlist.</i></h5>
-            {% endif %}
+            {% endif %} -->
           </form>
           &nbsp;
           <div class="rows">
@@ -47,4 +39,4 @@
           </div>
         </div>
       </div>
-    {% endblock %}
+{% endblock %}

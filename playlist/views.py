@@ -81,3 +81,6 @@ class PlaylistDeleteView(DeleteView):
       def get(self, *args, **kwargs):
         print('get method update')
         return self.delete(*args, **kwargs)
+
+# def about_page_view(request):
+#     return render(request, 'about.html')

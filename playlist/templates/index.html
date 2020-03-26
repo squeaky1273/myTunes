@@ -8,16 +8,20 @@
     </head>
 <body>
 {% block content %}
-  <center><h3><img src="{% static 'playlist/logo.png' %}" width=100px height=75px></i> myTunes {% if playlists %}<small class="text-muted">({{ playlists|length }} Playlists)</small>{% endif %}</h3></center>
-  <hr>
-  {% if playlists %}
-    <div class="card-columns">
-      {% for playlist in playlists %}
-        {% include "partials/card.html" %}
-      {% endfor %}
-    </div>
+  {% if user.is_authenticated %}
+    <center><h3><img src="{% static 'playlist/logo.png' %}" width=100px height=75px></i> myTunes {% if playlists %}<small class="text-muted">({{ playlists|length }} Playlist(s))</small>{% endif %}</h3></center>
+    <hr>
+    {% if playlists %}
+      <div class="card-columns">
+        {% for playlist in playlists %}
+          {% include "partials/card.html" %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="alert alert-primary" role="alert">No playlists to display.</div>
+    {% endif %}
   {% else %}
-    <div class="alert alert-primary" role="alert">No playlists to display.</div>
+    {% include "home.html" %}
   {% endif %}
 {% endblock %}
 </body>

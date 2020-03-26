@@ -1,16 +1,17 @@
 
-/* body {
+body {
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom right, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255)); /* Standard syntax (must be last)
-} */
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255));
+}
 
-body {
-	background: linear-gradient(-45deg, rgb(0, 255, 0), rgb(0, 208, 255), rgb(255, 0, 255));
+/* body {
+	background: linear-gradient(-45deg, rgb(0, 145, 123), rgb(255, 175, 29), rgb(138, 65, 180));
 	background-size: 8000% 400%;
 	animation: gradient 15s ease infinite;
+	font-weight: 400;
 }
 
 @keyframes gradient {
@@ -23,13 +24,17 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-}
+} */
 
 footer {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
     text-align: center;
 	}
+
+h1 {
+	size: 1000%;
+}
 	
