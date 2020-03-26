@@ -1,7 +1,7 @@
 <!-- # Playlister
 https://github.com/squeaky1273/Playlister/blob/master/proposal.md
 <br> -->
-# Welcome to ![51x39,20%](https://raw.githubusercontent.com/squeaky1273/Playlister/master/playlist/static/playlist/logo.png) myTunes 
+# Welcome to ![width=100px height=75px](https://raw.githubusercontent.com/squeaky1273/Playlister/master/playlist/static/playlist/logo.png) myTunes 
 <h3>We are a playlister that allows music lovers from all around to share their favorite playlists of any genre. https://playlister-p-r.herokuapp.com/ </h3>
 <br>
 
