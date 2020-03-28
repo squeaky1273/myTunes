@@ -1,5 +1,100 @@
 {% load static %}
 
-<div class="container">
-    <center><h2>Welcome<br> to</h2></center>
-    <center><h1><img src="{% static 'playlist/logo.png' %}" width=100px height=75px></i> myTunes</h1></center>
+<header class="masthead" id="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h2>Welcome to</h2>
+            <h1>myTunes</h1>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+            <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="2000">
+            <img src="{% static 'playlist/logo.png' %}" class="img-fluid" alt="" id="features-logo">
+            </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<section class="about" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="section-heading text-center">
+            <h3>We are a community of music lovers committed to out tunes. Feel free to show everyone your favorite songs in a playlist or mutiple playlists.</h3>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="sign-up" id="sign-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="section-heading text-center">
+                <h3>Not a member?</h3>
+                <hr>
+                <i class="fa fa-user"style="font-size:50px"></i>
+                <h4>Sign Up Today!</h4>
+                <h5>It's completely free and easy to do.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<section class="features area" id="features">
+    <div class="container">
+        <div class="section-heading text-center">
+        <h3>Features</h3>
+        <h5>Check out what's in it!</h5>
+        <hr>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 my-auto mx-auto">
+            <div data-aos="fade-right" data-aos-duration="2000">
+                <img src="{% static 'playlist/logo.png' %}" class="img-fluid" alt="" id="features-logo">
+            </div>
+        </div>
+            <div class="col-lg-8 my-auto">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div class="feature-item">
+                            <i class="fas fa-music"style="font-size:50px"></i>
+                            <h4>Playlists</h4>
+                            <h5 class="text-black">Create you own playlists. View them and if you don't like what you put, fix it or get rid of it. No problem.</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature-item">
+                            <i class="fab fa-youtube"style="font-size:50px"></i>
+                            <h4>Add Videos</h4>
+                            <h5 class="text-black">Apart from creating the bare bones of the playlist, add the correlating videos to play them.</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature-item">
+                            <i class="fas fa-archive"style="font-size:50px"></i>
+                            <h4>Compile</h4>
+                            <h5 class="text-black">Have a collection of many playlists that people have.</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature-item">
+                            <i class="fa fa-check"style="font-size:50px"></i>
+                            <h4>Free</h4>
+                            <h5 class="text-black">It's completely free. What's not to love.</h5>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
