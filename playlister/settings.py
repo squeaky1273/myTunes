@@ -132,7 +132,6 @@ STATICFILES_DIRS = [
 # playlist app settings
 PLAYLISTER_NAME_MAX_LENGTH = 600
 
-
 DEFAULT_LOGOUT_URL = '/'
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
@@ -140,7 +139,6 @@ LOGOUT_REDIRECT_URL = "/"
 
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 
 # PROTIP:
 # Need to override settings? Create a local_settings.py file
