@@ -1,5 +1,5 @@
 from django.urls import path
-from playlist.views import PlaylistListView, PlaylistCreateView, PlaylistDetailView, PlaylistUpdateView, PlaylistDeleteView
+from playlist.views import PlaylistListView, PlaylistCreateView, PlaylistDetailView, PlaylistUpdateView, PlaylistDeleteView, view
 
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('<str:slug>/', PlaylistDetailView.as_view(), name='playlist-details-page'),
     path('<str:slug>/update', PlaylistUpdateView.as_view(), name='playlist-update-page'),
     path('<str:slug>/delete', PlaylistDeleteView.as_view(), name='playlist-delete'),
+    path('healthcheck/',view, name='health-check')
 ]

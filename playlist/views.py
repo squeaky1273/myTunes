@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.http import HttpResponse
 
 from playlist.models import Playlist, Video
 from playlist.forms import PlaylistForm, VideoForm
@@ -84,3 +85,6 @@ class PlaylistDeleteView(DeleteView):
 
 # def about_page_view(request):
 #     return render(request, 'about.html')
+
+def view(request):
+  return HttpResponse()
