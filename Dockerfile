@@ -1,24 +1,20 @@
-FROM library/python:3.7-alpine
+FROM python:3.7
 
-# Create the palylister directory
+# The enviroment variable ensures that the python output is set straight
+# to the terminal with out buffering it first
+ENV PYTHONUNBUFFERED 1
+
+# create root directory for our project in the container
 RUN mkdir /playlister
+
+# Set the working directory
 WORKDIR /playlister
 
-# Install requirements and libraries.
-#   --no-cache allows users to install packages with an index that is updated and used on-the-fly and not cached locally
-RUN apk --no-cache --quiet add gcc make g++ bash git openssh \
-        sqlite curl build-base libffi-dev python-dev py-pip \
-        jpeg-dev zlib-dev libsass-dev
+# Copy the current directory contents into the container
+COPY . /playlister/
 
-# Add needed requirements
-COPY requirements.txt /playlister/
-RUN pip3 install -r requirements.txt
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
 
-# Copy to directory
-COPY ./ /playlister/
-
-# Open traffic
-EXPOSE 8080 80 443
-
-# Run the directory
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8080"]
+ENTRYPOINT ["python3"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
