@@ -1,3 +1,10 @@
+# run.sh
+# Run all the commands required to start Django in production.
+#!/bin/sh
+
 python manage.py collectstatic --noinput
+
 python manage.py migrate
-gunicorn playlister.wsgi --bind=0.0.0.0:80
+
+# For Production:
+gunicorn playlister.wsgi --reload --workers=2 --threads=4 --worker-tmp-dir=/dev/shm --bind=0.0.0.0:8080 --log-file=- --worker-class=gthread

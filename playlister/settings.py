@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     # 'health_check.contrib.rabbitmq',            # requires RabbitMQ broker
     # 'health_check.contrib.redis',   
 
-    'rest_framework',
+    # 'rest_framework',
     'playlist',
     'accounts'
 ]
@@ -93,9 +93,17 @@ WSGI_APPLICATION = 'playlister.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  os.getenv("PROJECT_DB_NAME"),
+        'USER':  os.getenv("PROJECT_DB_USER"),
+        'PASSWORD': os.getenv("PROJECT_DB_PASSWORD"),
+        'HOST': os.getenv("PROJECT_DB_HOST"),
+        'PORT': os.getenv("PROJECT_DB_PORT"),
     }
 }
 
@@ -160,5 +168,5 @@ try:
 except ImportError:
     pass
 
-ALLOWED_HOSTS = ['localhost', 'playlister-p-r.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'playlister-p-r.herokuapp.com', '127.0.0.1', 'my-tunes.dev.ppadyn.com', '0.0.0.0']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

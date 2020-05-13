@@ -1,4 +1,23 @@
-django>=2.2.10
-gunicorn
-djangorestframework
-whitenoise
+# django>=2.2.10
+# gunicorn
+# # health_check==3.0.4
+# djangorestframework
+# whitenoise==3.3.1
+# sqlparse==0.3.0
+# Pillow==7.1.1
+# psycorpg-binary==2.8.5
+# # # pytz==2019.3
+# # psycopg2>=2.7,<3.0
+asgiref==3.2.7
+Django==3.0.5
+django-cors-headers==3.2.1
+django-debug-toolbar==2.2
+djangorestframework==3.11.0
+gunicorn==20.0.4
+Pillow==7.1.2
+psycopg2-binary==2.8.5
+pytz==2020.1
+sqlparse==0.3.1
+whitenoise==5.0.1
+django-dotenv==1.4.2
+git+https://github.com/django-compressor/django-compressor.git
