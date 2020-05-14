@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'SECRET KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -48,9 +48,19 @@ INSTALLED_APPS = [
     # 'health_check.contrib.rabbitmq',            # requires RabbitMQ broker
     # 'health_check.contrib.redis',   
 
-    # 'rest_framework',
+    'whitenoise.runserver_nostatic',
+    'django.contrib.sites',
+    'compressor',
+    'rest_framework',
+    'corsheaders',
+    'debug_toolbar',
+    
     'playlist',
     'accounts'
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://0.0.0.0:8000"
 ]
 
 MIDDLEWARE = [
@@ -93,18 +103,17 @@ WSGI_APPLICATION = 'playlister.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
-
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME':  os.getenv("PROJECT_DB_NAME", "postgres"),
-    #     'USER':  os.getenv("PROJECT_DB_USER", "postgres"),
-    #     'PASSWORD': os.getenv("PROJECT_DB_PASSWORD", "postgres"),
-    #     'HOST': os.getenv("PROJECT_DB_HOST", 'db'),
-    #     'PORT': os.getenv("PROJECT_DB_PORT", 5432),
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  os.getenv("DB_NAME"),
+        'USER':  os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST", 'db'),
+        'PORT': os.getenv("DB_PORT", 5432),
     }
 }
 
