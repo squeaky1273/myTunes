@@ -12,6 +12,7 @@ https://github.com/squeaky1273/Playlister/blob/master/proposal.md
         * [ Cloning Repo. ](#clone)
 * [ Running the tests. ](#test)
 * [ Built With. ](#built)
+* [ Docker ](#docker)
 * [ Author(s). ](#author(s))
 * [ Acknowledgment. ](#credit)
 
@@ -62,6 +63,22 @@ Run the tests for this project from the command line using:
 * CSS -  website styling
 * HTML - website styling
 * Heroku - website host
+* Docker - deploy onto personal domain
+
+<a name="docker"></a>
+## Docker
+
+### Build
+```
+docker build -t tunes .
+```
+### Run
+```
+docker run -p 8080:8080 --rm --name mytunes tunes
+```
+### Health Check
+Sending ```GET``` request to ```/health``` should return ```{"Status": "200 OK"}```
+
 
 <a name="author(s)"></a>
 ## Author(s)
