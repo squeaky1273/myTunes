@@ -1,7 +1,7 @@
 <!-- # Playlister
 https://github.com/squeaky1273/Playlister/blob/master/proposal.md
 <br> -->
-# Welcome to <img src=https://raw.githubusercontent.com/squeaky1273/Playlister/master/playlist/static/playlist/logo.png width="75"> myTunes 
+# Welcome to <img src=https://raw.githubusercontent.com/squeaky1273/Playlister/master/playlist/static/playlist/logo.png width="75"> myTunes
 <h3>We are a playlister that allows music lovers from all around to share their favorite playlists of any genre. https://playlister-p-r.herokuapp.com/ </h3>
 <br>
 
@@ -41,11 +41,11 @@ These instructions will help you get the project up and running on your machine.
 <a name="clone"></a>
 <h4>Cloning Repo</h4>
 
-    * git clone https://github.com/squeaky1273/Any_Questions.git
-    * cd forum
+    * git clone https://github.com/squeaky1273/Playlister.git
+    * cd playlist
     * rm -rf .git
     * git init
-    * git remote add origin https://github.com/YOUR_GITHUB_USERNAME/any_questions
+    * git remote add origin https://github.com/YOUR_GITHUB_USERNAME/Playlister
 
 <a name="test"></a>
 ## Running the tests
@@ -91,4 +91,3 @@ Padyn Riddell - <i>Initial work</i> - Make School Student and BEW concentration
 * God - Thank you for giving the ability to have opportunties to build code and go to school.
 * Mom & family - Thank you for beliving in me and being encouraging.
 * Meredith - Thank you for helping me with any issues that I had with implementing code.
- 
